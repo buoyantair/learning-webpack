@@ -4,8 +4,12 @@ const CleanWebpakPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './src/index.js',
-    print: './src/print.js',
+    app: path.resolve('./src/index.js'),
+    print: path.resolve('./src/print.js'),
+  },
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: path.resolve('./dist'),
   },
   plugins: [
     new CleanWebpakPlugin(['dist']),

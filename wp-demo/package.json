@@ -11,6 +11,7 @@
   "keywords": [],
   "author": "buoyantair",
   "license": "ISC",
+  "sideEffects": false,
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.11",

@@ -4,6 +4,7 @@ const CleanWebpakPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
+  mode: "production",
   entry: {
     app: path.resolve('./src/index.js'),
   },
@@ -18,7 +19,7 @@ module.exports = {
         test: /\.css$/,
         use: [
           'style-loader',
-          'css-loader', 
+          'css-loader',
         ]
       }
     ]

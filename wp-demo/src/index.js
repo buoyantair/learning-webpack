@@ -1,28 +1,13 @@
-import printMe from './print';
+import { cube, square } from './math';
 import './style.css';
 
 function component() {
   var element = document.createElement('div');
-  var btn = document.createElement('button');
-
-  element.innerHTML = 'gay as webpack';
-  
-  btn.innerHTML = 'Summon the printer!';
-  btn.onclick = printMe;
-
+  element.innerHTML = `gay as webpack = ${cube(50)}%`;
   element.appendChild(btn);
-
+  console.log(cube(50), square(15), square(3));
   return element;
 }
 
 let element = component();
 document.body.appendChild(element);
-
-if (module.hot) {
-  module.hot.accept('./print.js', function() {
-    console.log('Accepted updated module');
-    document.body.removeChild(element);
-    element = component();
-    document.body.appendChild(element);
-  })
-}

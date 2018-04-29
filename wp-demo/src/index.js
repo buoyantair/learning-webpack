@@ -1,11 +1,11 @@
-import _ from 'lodash';
 import printMe from './print';
+import './style.css';
 
 function component() {
   var element = document.createElement('div');
   var btn = document.createElement('button');
 
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  element.innerHTML = 'gay as webpack';
   
   btn.innerHTML = 'Summon the printer!';
   btn.onclick = printMe;
@@ -15,4 +15,14 @@ function component() {
   return element;
 }
 
-document.body.appendChild(component());
+let element = component();
+document.body.appendChild(element);
+
+if (module.hot) {
+  module.hot.accept('./print.js', function() {
+    console.log('Accepted updated module');
+    document.body.removeChild(element);
+    element = component();
+    document.body.appendChild(element);
+  })
+}

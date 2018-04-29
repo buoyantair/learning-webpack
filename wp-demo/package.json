@@ -4,9 +4,9 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --open",
-    "build": "webpack",
-    "watch": "webpack --watch"
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "watch": "webpack --config webpack.dev.js --watch",
+    "build": "webpack --config webpack.prod.js"
   },
   "keywords": [],
   "author": "buoyantair",
@@ -25,6 +25,8 @@
     "xml-loader": "^1.2.1"
   },
   "dependencies": {
-    "lodash": "^4.17.10"
+    "lodash": "^4.17.10",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "webpack-merge": "^4.1.2"
   }
 }
